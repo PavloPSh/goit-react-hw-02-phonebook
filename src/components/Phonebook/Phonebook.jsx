@@ -70,9 +70,9 @@ export class PhoneBook extends Component {
         return filteredContacts;
     }
 
-    isAlreadyAdd ({name,number}) {
+    isAlreadyAdd ({name}) {
         const { contacts } = this.state;
-        const result = contacts.find((contact) => contact.name === name && contact.number === number);
+        const result = contacts.find((contact) => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase());
         return result;
     }
 
